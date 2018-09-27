@@ -27,7 +27,7 @@ def get_image_ids_in_range(start_index=0, end_index=99):
     start_page = int(start_index / ids_per_page + 1)
     endPage = int(end_index / ids_per_page + 1)
     ids = []
-    for page in range(start_index, endPage + 1):
+    for page in range(start_page, endPage + 1):
         data = utils.retrieve_data('/api/v0/images/all?page=' + str(page))
         ids.extend(data['results'])
     ids = ids[start_index % 100:]
