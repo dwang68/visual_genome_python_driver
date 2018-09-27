@@ -28,7 +28,7 @@ setup(
     name='visual_genome',
     version=__version__,
     keywords=['Spyder', 'Plugin'],
-    url='https://github.com/ranjaykrishna/visual_genome_python_driver',
+    url='https://github.com/dwang68/visual_genome_python_driver',
     license='MIT',
     author='Ranjay Krishna',
     author_email='anjaykrishna@gmail.com',
