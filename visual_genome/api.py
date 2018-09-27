@@ -24,14 +24,14 @@ def get_image_ids_in_range(start_index=0, end_index=99):
     Get Image ids from start_index to end_index.
     """
     ids_per_page = 1000
-    #start_page = int(start_index / ids_per_page + 1)
-    #endPage = int(end_index / ids_per_page + 1)
-    ids = [1]
-    #for page in range(0, 1):
-        #data = utils.retrieve_data('/api/v0/images/all?page=' + str(page))
-        #ids.extend(data['results'])
-    #ids = ids[start_index % 100:]
-    #ids = ids[:end_index - start_index + 1]
+    start_page = int(start_index / ids_per_page + 1)
+    endPage = int(end_index / ids_per_page + 1)
+    ids = []
+    for page in range(start_index, endPage + 1):
+        data = utils.retrieve_data('/api/v0/images/all?page=' + str(page))
+        ids.extend(data['results'])
+    ids = ids[start_index % 100:]
+    ids = ids[:end_index - start_index + 1]
     return ids
 
 def get_experiement(start_index=0, end_index=99):
